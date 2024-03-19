@@ -8,9 +8,9 @@ const TabsHeader = ({ tabs, activeTab, onChange }) => {
     document.addEventListener('scroll', handleScroll);
 
     return (
-        <header id="tabsHeader" className="tabs-header">
-            <nav className="p-1 bg-white dark:bg-[#1f1e24]">
-                <ul className="flex flex-row gap-2 overflow-x-auto whitespace-nowrap rounded-md ">
+        <header id="tabsHeader" className="tabs-header py-3">
+            <nav className="dark:bg-[#24262F] rounded-xl">
+                <ul className="flex flex-row gap-2 overflow-x-auto whitespace-nowrap ">
                     {tabs.map((tab, index) => (
                         <Tab
                             key={index}

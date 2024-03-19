@@ -1,5 +1,11 @@
 .tabs-header {
     position: sticky;
+    padding: 0.75rem 0;
+    background: white;
     top: 10vh;
     z-index: 10;
+}
+
+.dark .tabs-header {
+    background: #1f1e24;
 }

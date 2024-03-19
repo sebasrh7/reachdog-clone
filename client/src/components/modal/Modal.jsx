@@ -32,7 +32,7 @@ const Modal = ({ showModal, setShowModal, children }) => {
                         ref={modalRef}
                         onClick={closeModal}
                         className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed h-full w-full z-50 top-0 left-0 outline-none focus:outline-none bg-white bg-opacity-50 dark:bg-[#1F1E24] dark:bg-opacity-50 backdrop-blur-[1px]">
-                        <div className="relative my-auto py-4 lg:mx-auto mx-4 max-w-2xl">
+                        <div className="relative m-4 md:mx-auto max-w-2xl">
                             {children}
                         </div>
                     </div>

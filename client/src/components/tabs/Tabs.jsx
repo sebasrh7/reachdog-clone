@@ -13,7 +13,7 @@ const Tabs = ({ data }) => {
     };
 
     return (
-        <section className="py-8">
+        <section className="my-4">
             <TabsHeader tabs={data} activeTab={filters.category} onChange={handleChangeTab} />
             <TabsBody tabs={data} activeTab={filters.category} />
         </section>

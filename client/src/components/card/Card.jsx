@@ -102,7 +102,7 @@ const Card = ({ data }) => {
                     </ModalHeader>
                     <ModalBody>
                         <div className="flex flex-col sm:flex-row gap-4 p-1">
-                            <div className="mx-auto max-w-[300px] w-full">
+                            <div className="mx-auto" >
                                 <Carousel images={data.images} />
                             </div>
 

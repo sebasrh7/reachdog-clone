@@ -3,7 +3,7 @@ const CarouselItem = ({ selectedImage }) => {
         <img
             src={selectedImage}
             alt="Product"
-            className="object-cover rounded-2xl aspect-square mx-auto h-full w-full"
+            className="object-contain rounded-2xl aspect-square sm:w-[300px] max-w-[300px] w-full"
             loading="lazy"
         />
     );

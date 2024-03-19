@@ -11,7 +11,7 @@ const Dropdown = ({ navItems }) => {
   const { theme, handleChangeTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const DropdownMenuRef = useRef(null); // Referencia al DropdownMenu
-  
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
 
@@ -70,17 +70,16 @@ const Dropdown = ({ navItems }) => {
               {navItems.map((item, index) => (
                 <DropdownItem key={index}>
                   <Button
-                    href={item.url}
+                    href="#"
                     variant={item.variant}
-                    className={`inline-block text-xs w-full text-center ${item.variant === "text" ? 'text-green-400 hover:bg-green-400 hover:text-white border border-green-400' : 'text-white'}`}
                     newpage={{ target: "_self", rel: "noreferrer" }}
+                    className={`inline-block text-xs ${item.variant === "text" ? 'text-green-400' : 'text-white'}`}
                   >
                     {item.text}
                   </Button>
                 </DropdownItem>
               ))}
             </div>
-
           </DropdownMenu>
         </div>
       }

@@ -7,7 +7,7 @@ const Carousel = ({ images }) => {
 
     return (
 
-        <div className="relative ">
+        <div className="relative">
             <CarouselItem selectedImage={images[selectedIndex]} />
             <div className="flex justify-center space-x-3 pt-4">
                 {images.map((_, index) => (

@@ -1,10 +1,7 @@
-import { FaSun, FaMoon, FaTimes } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import { Dropdown } from '../dropdown/index.dropdown';
 import { useTheme } from '../../hooks/useTheme';
 import Button from '../button/Button';
-import { useState } from 'react';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from '../modal/index.modal';
-import { Login, Register } from '../login/index.login';
 
 const NavBar = () => {
 
@@ -20,19 +17,8 @@ const NavBar = () => {
 
     const { theme, handleChangeTheme } = useTheme();
 
-    const [openLoginModal, setOpenLoginModal] = useState(false);
-    const [openRegisterModal, setOpenRegisterModal] = useState(false);
-
-    const handleOpenLoginModal = () => {
-        setOpenLoginModal(true);
-    };
-
-    const handleOpenRegisterModal = () => {
-        setOpenRegisterModal(true);
-    };
 
     return (
-        <>
             <header id="navBar" className="flex justify-between items-center w-full h-full min-h-[10vh] bg-white dark:bg-[#24262F] p-3 sticky top-0 z-50">
                 <Button
                     href="/"
@@ -46,6 +32,7 @@ const NavBar = () => {
                     />
                 </Button>
                 {/* Navegación */}
+
                 <nav className="flex justify-between items-center">
                     {/* Enlaces para dispositivos de escritorio */}
                     <ul className='md:flex hidden md:flex-row md:items-center gap-1 mr-2'>
@@ -59,11 +46,11 @@ const NavBar = () => {
                                 {theme === "light" ? <FaMoon /> : <FaSun />}
                             </Button>
                         </li>
-                        {/* Enlaces */}
+
                         {navItems.map((item, index) => (
                             <li key={index} className="">
                                 <Button
-                                    onClick={item.text === "Login" ? handleOpenLoginModal : item.text === "Register" ? handleOpenRegisterModal : null}
+                                    href="#"
                                     variant={item.variant}
                                     newpage={{ target: "_self", rel: "noreferrer" }}
                                     className={`inline-block text-xs ${item.variant === "text" ? 'text-green-400' : 'text-white'}`}
@@ -72,58 +59,13 @@ const NavBar = () => {
                                 </Button>
                             </li>
                         ))}
+
+
                     </ul>
 
                     <Dropdown navItems={navItems} />
                 </nav>
             </header>
-
-            {/* Modal de Login */}
-            <Modal
-                showModal={openLoginModal}
-                setShowModal={setOpenLoginModal}
-            >
-                <ModalContent>
-                    <ModalHeader>
-                        <Button onClick={() => setOpenLoginModal(false)}
-                            variant="text"
-                            className=" ml-auto">
-                            <FaTimes />
-                        </Button>
-                    </ModalHeader>
-                    <ModalBody>
-                        <Login />
-                    </ModalBody>
-                    <ModalFooter>
-                        <p className="text-xs font-medium">Don't have an account? <Button variant="text" onClick={() => { setOpenRegisterModal(true); setOpenLoginModal(false) }}>Register</Button></p>
-                    </ModalFooter>
-                </ModalContent>
-
-            </Modal>
-
-            {/* Modal de Register */}
-            <Modal
-                showModal={openRegisterModal}
-                setShowModal={setOpenRegisterModal}
-            >
-                <ModalContent>
-                    <ModalHeader>
-                        <Button onClick={() => setOpenRegisterModal(false)}
-                            variant="text"
-                            className=" ml-auto">
-                            <FaTimes />
-                        </Button>
-                    </ModalHeader>
-                    <ModalBody>
-                        <Register />
-                    </ModalBody>
-                    <ModalFooter>
-                        <p className="text-xs font-medium">Already have an account? <Button variant="text" onClick={() => { setOpenLoginModal(true); setOpenRegisterModal(false) }}>Login</Button></p>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
-
-        </>
 
     );
 };

@@ -1,16 +1,16 @@
 const Hero = () => {
     return (
         <section className="flex items-center justify-center md:flex-row gap-4 min-h-[90vh] flex-col overflow-hidden">
-            <div className="flex flex-col gap-4 md:w-1/2 ">
-                <h2 className="text-2xl font-semibold">
+            <div className="md:w-1/2">
+                <h1 className="text-3xl font-semibold">
                     Discover
-                </h2>
-                <h1 className="text-5xl font-semibold">
-                    The Best Deals
-                </h1>
-                <h2 className="text-2xl font-semibold">
+                    <br />
+                    <span className="text-5xl font-semibold text-green-400">
+                        The Best Deals
+                    </span>
+                    <br />
                     On Reach Dog Clone
-                </h2>
+                </h1>
             </div>
 
             <div className=" md:w-1/2 ">
