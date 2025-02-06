@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="py-4 bg-white dark:bg-[#24262F]  text-[#798291] dark:text-[#9ba6b8] text-center text-xs">
+    <footer className="py-4 bg-white dark:bg-[#24262F] text-[#798291] dark:text-[#9ba6b8] text-center text-xs">
       Based on&nbsp;
       <a
         href="https://reach.dog"

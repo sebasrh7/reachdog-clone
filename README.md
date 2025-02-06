@@ -7,9 +7,8 @@ This is a cloning project of the ReachDog website.
 To install and run this project, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/sebasrh7/reachdog-clone.git`.
-2. Navigate to the project directory: `cd reachdog-clone/client`.
-3. Install the dependencies: `npm install`.
-4. Run the project: `npm run dev`.
+2. Install the dependencies: `npm install`.
+3. Run the project: `npm run dev`.
 
 ## Usage
 

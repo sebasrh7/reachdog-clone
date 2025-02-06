@@ -14,6 +14,7 @@ const useData = () => {
     // useEffect para obtener los productos de la API
     useEffect(() => {
         getAllProducts().then((data) => {
+            console.log(data.products.filter(product => product.category === 'skin-care'));
             setProducts(data.products);
             setIsLoading(false);
         });
@@ -27,13 +28,12 @@ const useData = () => {
 }
 
 const generateTabsData = (filteredProducts, products) => {
-
     return [
         {
             label: 'All Products',
             icon: <FaList />,
             value: 'all-products',
-            content: products.filter(product => ['smartphones', 'laptops', 'skincare', 'home-decoration', 'fragrances'].includes(product.category))
+            content: products.filter(product => ['smartphones', 'laptops', 'skin-care', 'home-decoration', 'fragrances'].includes(product.category))
         },
         {
             label: 'Smartphones',
@@ -50,8 +50,8 @@ const generateTabsData = (filteredProducts, products) => {
         {
             label: 'Skincare',
             icon: <FaSpa />,
-            value: 'skincare',
-            content: filteredProducts.filter(product => product.category === 'skincare') // esto 
+            value: 'skin-care',
+            content: filteredProducts.filter(product => product.category === 'skin-care') // esto 
         },
         {
             label: 'Home Decoration',

@@ -13,10 +13,10 @@ const Hero = () => {
                 </h1>
             </div>
 
-            <div className=" md:w-1/2 ">
+            <div className=" md:w-1/2">
                 <div className="flex flex-col gap-0 mx-auto">
                     <img
-                        className="object-contain w-full max-h-[450px]"
+                        className="object-contain w-full max-h-[450px] aspect-square"
                         src="/images/woman-shopping.webp"
                         alt="woman shopping"
                         loading="lazy"
